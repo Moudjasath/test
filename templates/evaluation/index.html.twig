@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+        <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{asset('style.css') }}">
+</head>
+    <body>
+            <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand">Professeur</a>
+            <form class="d-flex">
+            <button class="btn btn-outline-success" type="submit">Connexion</button>
+                <button class="btn btn-outline-success" type="submit">Inscription</button>
+            </form>
+            </div>
+        </nav>
+            <div class="container mt-5">
+                {{ form_start(evaluation) }}
+                <div class="row">
+                    <div class="col-6">
+                        {{form_row(evaluation.note)}}
+                    </div>
+                    <div class="col-6">
+                        {{form_row(evaluation.matiere)}}
+                    </div>
+                </div>
+                        <div class="row">
+                            <div class="col-6">
+                            {{form_row(evaluation.Etudiant)}}
+                            </div>
+                        </div>
+   
+                <div class="col-12 mt-4 d-flex justify-content-center">
+                    <button class="btn btn-outline-success" type="submit">Enregistrer</button>
+                </div>
+        
+     {{ form_end(evaluation) }}
+   </div>    
+   </body>
+</html>                 

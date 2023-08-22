@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+        <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{asset('style.css') }}">
+</head>
+    <body>
+            <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand">Professeur</a>
+            <form class="d-flex">
+            <button class="btn btn-outline-success" type="submit">Connexion</button>
+                <button class="btn btn-outline-success" type="submit">Inscription</button>
+            </form>
+            </div>
+        </nav>
+            <div class="container mt-5">
+           <h4> Nom etudiant:  {{ etu.nomEtudiant}}</h4> 
+            <h4> Prénom etudiant:</h4>  
+                <table class="table table-bordered ">
+            <thead>
+            <tr>
+                <th scope="col">Matière</th>
+                <th scope="col">Note</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+         {% for eva in evas %}
+            <tr class="">
+              <td>{{ eva.matiere.nomMatiere}}</td>
+              <td>{{ eva.note}}</td>
+              <td>
+               <button class="btn btn-outline-success" type="button"><a href="{{ path('app_evaluation_note', {id: etudiant.id }) }}">Evaluation</a></button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+            </div>    
+   </body>
+</html>                 

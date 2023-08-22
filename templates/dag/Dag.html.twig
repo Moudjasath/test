@@ -27,6 +27,7 @@
             <th scope="col">Prénom</th>
             <th scope="col">Matricule</th>
             <th scope="col">Filière</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +37,9 @@
               <td>{{ etudiant.prenomEtudiant }}</td>
               <td>{{ etudiant.matricule }}</td>
               <td>{{ etudiant.filiere.nomFiliere }}</td>
+              <td>
+               <button class="btn btn-outline-success" type="button"><a href="{{ path('app_evaluation_note', {id: etudiant.id }) }}">Evaluation</a></button>
+              </td>
             </tr>
           {% endfor %}
         </tbody>
