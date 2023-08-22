@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('style.css') }}">
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand">Etudiant</a>
+    <form class="d-flex">
+      <button class="btn btn-outline-success" type="submit">Connexion</button>
+        <button class="btn btn-outline-success" type="submit">Inscription</button>
+    </form>
+    </div>
+  </nav>
+    <div class="container mt-5">
+     
+      <caption>Listes des Etudiants</caption>
+      <table class="table table-bordered ">
+        <thead>
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Matricule</th>
+            <th scope="col">Filière</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for etudiant in etudiants %}
+            <tr class="">
+              <th scope="row">{{ etudiant.nomEtudiant }}</th>
+              <td>{{ etudiant.prenomEtudiant }}</td>
+              <td>{{ etudiant.matricule }}</td>
+              <td>{{ etudiant.filiere.nomFiliere }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>

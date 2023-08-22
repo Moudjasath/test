@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('style.css') }}">
+</head>
+<body>
+ <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand">Etudiant</a>
+    <form class="d-flex">
+      <button class="btn btn-outline-success" type="submit">Connexion</button>
+        <button class="btn btn-outline-success" type="submit">Inscription</button>
+    </form>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    {#  {{form(etudiant)}} #}
+    {{ form_start(etudiant) }}
+
+     <div class="row">
+        <div class="col-6">
+            {{form_row(etudiant.Matricule)}}
+        </div>
+        <div class="col-6">
+            {{form_row(etudiant.NomEtudiant)}}
+        </div>
+    </div>
+       <div class="row">
+            <div class="col-6">
+               {{form_row(etudiant.filiere)}}
+            </div>
+            <div class="col-6">
+              {{form_row(etudiant.PrenomEtudiant)}}
+            </div>
+        
+        </div>
+        <div class="row">
+            <div class="col-6">
+               {{form_row(etudiant.Age)}}
+            </div>
+            <div class="col-6">
+              {{form_row(etudiant.Sexe)}}
+            </div>
+        
+        </div>
+                <div class="row">
+                    <div class="col-6">
+                    {{form_row(etudiant.sallecours)}}
+                    </div>
+                    
+                
+                </div>
+
+        
+                <div class="col-12 mt-4 d-flex justify-content-center">
+                    <button class="btn btn-outline-success" type="submit">Enregistrer</button>
+                </div>
+        
+     {{ form_end(etudiant) }}
+   </div>
+
+      
+</body>
+</html>
+
+
